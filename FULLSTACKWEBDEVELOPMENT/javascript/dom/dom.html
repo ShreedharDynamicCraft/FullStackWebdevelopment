@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="one"><span>hello</span> Shreedhar</p>
+    
+    <ul>
+        <li class="tech">One</li>
+        <li class="tech">Two</li>
+        <li class="tech">Three</li>
+    </ul>
+    
+    <h4>Hey</h4>
+    <h4>Namaste</h4>
+    <h4>Hola</h4>
+<!--Queryselector-->
+<h2>hello</h2>
+<h4 class="h">Namaste</h4>
+
+    <h4 id="12" >Hola</h4>
+    <script>
+        // id
+        let var1 = document.getElementById("one");
+        console.log(var1.innerText);
+        
+        // class
+        let var2 = document.getElementsByClassName("tech"); // Use "tech" instead of "one"
+        console.log(var2);
+        var2[1].innerText = "Nodejs";
+        
+        let var3 = document.getElementsByTagName("h4");
+        console.log(var3[1].innerHTML); // Correct typo "innnerHtml" to "innerHTML"
+        var3[2].innerText = "Shreedhar Anand";
+        var3[2].style.color="blue";
+
+        let var4=document.querySelector(".h");
+        console.log(var4);
+        
+        var4.className="skiks";
+        var4.setAttribute("id","shree");
+    </script>
+</body>
+</html>

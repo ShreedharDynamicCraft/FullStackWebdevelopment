@@ -1,0 +1,18 @@
+body {
+    background-color: green;
+}
+main{
+    color:skyblue;
+}
+h1>p{
+    color : red;
+
+}
+section + p{
+    color: rgb(63, 35, 206);
+}
+[target="_blank"]
+{
+    color:skyblue;
+    text-decoration:solid ;
+}

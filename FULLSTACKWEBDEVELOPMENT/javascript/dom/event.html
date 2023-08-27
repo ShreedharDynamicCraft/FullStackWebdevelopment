@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>DOm part 3</title>
+</head>
+<body>
+    <!--Normal HTML-->
+    <h1>click anywhere-MY dear</h1>
+
+<p id="js"></p>
+<button onclick="hey()" id="hi">submit</button>
+<script>
+    document.addEventListener("dblclick",hello);
+
+    function hello(){
+        document.getElementById("js").innerText="Hello Bro";
+
+    }
+    function hey(){
+        document.getElementById("hi").innerText="Submitted Sucessfully"
+   document.getElementById("hi").style.color="aqua";
+   document.getElementById("hi").style.background="black";
+   document.getElementById("hi").style.padding="18px";
+
+   }
+</script>
+</body>
+</html>

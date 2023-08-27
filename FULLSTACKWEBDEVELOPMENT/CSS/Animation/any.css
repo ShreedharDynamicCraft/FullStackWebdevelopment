@@ -1,0 +1,38 @@
+div{
+    width :100px;
+    height:100px;
+    /* background-color: blue; */
+    background-image:url(https://www.linkedin.com/in/shreedhar-anand-23a699214?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADY03w4BhWYhXM-Q0WN4kDcfXwM5SLkVbYc&lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BGc4IsS11RM%2B9FoJ%2FmEbe5g%3D%3D);
+position:relative;
+    animation-name: colorchange ;
+ animation-duration: 2s;
+ animation-iteration-count: 3;
+ animation-direction: alternate-reverse;
+
+}
+@keyframes colorchange {
+    from {
+     
+        background-color: rgb(0, 0, 0) ;
+    top:0px;
+    left:8px;
+    } 
+    to {background-color: red;
+        top:0px;
+        left:200px;
+    }
+
+}
+div:hover {
+    background-color: red;
+}
+div :active{
+    background-color: aqua;
+    align-items: center;
+    animation-duration: 3s;
+}
+div:focus{
+    border-color: green;
+    animation-duration: 3s;
+
+}
