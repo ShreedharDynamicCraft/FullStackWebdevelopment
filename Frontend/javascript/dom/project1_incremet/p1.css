@@ -1,0 +1,65 @@
+/* Apply a more consistent and modern box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a pleasant background color for the whole page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ddbfbf; /* Light gray background */
+}
+
+/* Style the title for a cleaner look */
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px; /* Increased padding for better spacing */
+    border: 4px solid #333; /* Dark gray border */
+    background-color: #00bcd4; /* Turquoise background color */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    text-align: center;
+    color: #fff; /* White text color */
+}
+#dis{
+    background-attachment:fixed;
+    background-color: rgb(12, 59, 229);
+}
+/* Style main and section elements */
+main, section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border :5px solid black;
+    background-color: aqua;
+    box-shadow: 5px 4px 8px #e04d4d;
+    font-weight: bold;
+    font-weight: bold;
+    margin-top: 20px; /* Increased margin for separation */
+}
+
+/* Styling for the displayed number */
+#dis {
+    font-size: 100px; /* Reduced font size for better readability */
+    padding: 20px 40px; /* Adjusted padding for better spacing */
+    border: 2px solid #333; /* Dark gray border */
+    color: #ff5722; /* Orange text color */
+}
+
+/* Hover styles for buttons */
+#reset:hover, #inc:hover, #dec:hover {
+    background-color: #1976d2; /* Dark blue background on hover */
+    color: #81c784; /* Light green text color on hover */
+    font-size: 24px; /* Slightly increased font size on hover */
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s; /* Smooth transition */
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz app</title>
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: cyan;
+        }
+
+        #Quiz {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #444;
+            border-radius: 10px;
+        }
+
+        .question {
+            color: cyan;
+            margin-bottom: 10px;
+        }
+
+        .answers {
+            margin-left: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        #Submit {
+            display: block;
+            margin: 20px auto;
+            background-color: cyan;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #Results {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Javascript Quiz app</h1>
+    <div id="Quiz"></div>
+    <button id="Submit">Submit</button>
+    <div id="Results"></div>
+    <script>
+        const quizContainer = document.getElementById('Quiz');
+        const submitButton = document.getElementById('Submit');
+        const resultsContainer = document.getElementById('Results');
+
+        const myQuestions = [
+            {
+                question: "What is the capital of France?",
+                answers: {
+                    a: "Paris",
+                    b: "London",
+                    c: "New York"
+                },
+                correctAnswer: "a"
+            },
+            {
+                question: "What is the largest country in the world?",
+                answers: {
+                    a: "Russia",
+                    b: "China",
+                    c: "United States"
+                },
+                correctAnswer: "a"
+            },
+            {
+                question: "What is the currency of Japan?",
+                answers: {
+                    a: "Yuan",
+                    b: "Euro",
+                    c: "Yen"
+                },
+                correctAnswer: "c"
+            }
+        ];
+
+        function buildQuiz() {
+            const output = [];
+            myQuestions.forEach((currentQuestion, questionNumber) => {
+                const answers = [];
+                for (const letter in currentQuestion.answers) {
+                    answers.push(
+                        `<label><input type="radio" name="question${questionNumber}" value="${letter}" />${letter} : ${currentQuestion.answers[letter]}</label>`
+                    );
+                }
+                output.push(
+                    `<div class="question">${currentQuestion.question}</div>
+                    <div class="answers">${answers.join('')}</div>`
+                );
+            });
+            quizContainer.innerHTML = output.join('');
+        }
+
+        buildQuiz(); // Call the function to build the quiz.
+
+        function showResult() {
+            const answerContainers = quizContainer.querySelectorAll('.answers');
+            let numCorrect = 0;
+
+            myQuestions.forEach((currentQuestion, questionNumber) => {
+                const answerContainer = answerContainers[questionNumber];
+                const selector = `input[name=question${questionNumber}]:checked`;
+                const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+                if (!userAnswer) {
+                    // If a question is not answered, set the flag to false.
+                    allQuestionsAnswered = false;
+                } else {
+                    if (userAnswer === currentQuestion.correctAnswer) {
+                        numCorrect++;
+                        answerContainer.style.color = 'green';
+                    } else {
+                        answerContainer.style.color = 'red';
+                    }
+                }
+            });
+
+            if (allQuestionsAnswered) {
+                resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+            } else {
+                resultsContainer.innerHTML = 'Please answer all questions before submitting.';
+            }
+        }
+
+        submitButton.addEventListener('click', showResult);
+
+    </script>
+</body>
+</html>
